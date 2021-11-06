@@ -1,0 +1,73 @@
+<div id="countcol" >
+	<p><b>Имя дерева решений:</b><br>
+		<input id="treename" name="treename" type="text" size="30" value="{{mresult.treename}}">
+	</p>
+	<p><b>Количество артибутов:</b><br>
+		<input id="cols" name="cols" type="text" size="30" value="{{mresult.cols}}">
+		
+		<input type='button' style='visibility:hidden' id="btncreatevaluetab" value='Создать' onClick="createvaluetab()">
+		
+	</p>
+
+  </div>
+
+  <div id="valuetable" >
+	<p><b>Заголовки атрибутов:</b><br>
+
+	<table data-name="tabvalue" id="tabvalue" border="1" cellspacing="0" cellpadding="5">
+    </table>
+	<input type="hidden" id="inputtabvalue" name="inputtabvalue" value="{{mresult.main_tab}}">
+
+	<p><b>Количество строк:</b><br>
+		<input id="rows" name="rows" type="text" size="30" value="{{mresult.rows}}" >
+		
+		<input type='button' style='visibility:hidden' id="btncreatevaluetab1" value='Создать1' onclick="createvaluetab1()">
+	
+	</p>
+
+  </div>
+
+  <div id="supertable" >
+	<p><b>Обучаемая таблица:</b><br>
+	
+	<table data-name="tabvalue1" id="tabvalue1"  border="1" cellspacing="0" cellpadding="5">
+    </table>
+	<input type="hidden" id="inputtabvalue1" name="inputtabvalue1" value="{{mresult.titles}}">
+	
+	<p><b>Атрибут классификации:</b><br>
+	<input id="catAttr" name="key" type="text" size="30" value="{{mresult.key}}">
+	
+	<p><b>Игнорируемый атрибут:</b><br>
+	<input id="ignAttr" name="ign_key" type="text" size="30"  value="{{mresult.ign_key}}">
+	
+	<input type='button' style='visibility:hidden' id="btncreatevaluetab2"  value='Применить' onClick="createvaluetab2()">
+	
+	<p><b>Классифицируемые атрибуты:</b><br>
+	<table data-name="tabvalue2" id="tabvalue2" border="1" cellspacing="0" cellpadding="5">
+    </table>
+	<input type="hidden" id="inputtabvalue2" name="inputtabvalue2" value="{{mresult.atr_tab}}">
+	
+	<input type='button' style='visibility:hidden' id="btncreatevaluetab3" value='Создать' onClick="createvar()">
+	<hr>
+  </div>
+
+		 <button class="btn btn-priamary" onclick="pdf()">Создать снимок экрана</button>
+		 <button class="btn btn-priamary" id="ssylka"><a href="/result/{{mresult.id}}/edit?allow=true">Редактировать</a></button><br>
+			<form action="/result/remove" method="POST">
+			<input type="hidden" name="id" value="{{mresult.id}}">
+			<input type="hidden" name="_csrf" value="{{csrf}}">
+			<button class="btn red" >Удалить результат</button>
+			</form>
+
+ <b>Введенные Атрибуты:</b>
+<div id="testingItem"></div>
+<br/>
+<b>Прогноз дерева решений:</b>
+<div id="decisionTreePrediction"></div>
+<br/>
+<b>Случайный прогноз дерева решений:</b>
+<div id="randomForestPrediction"></div>
+<br/>
+<b>Дерево решений:</b>
+<br/>
+<div class="tree" id="displayTree"></div>

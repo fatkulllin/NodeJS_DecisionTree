@@ -1,0 +1,32 @@
+<h1>Будет отредактирован отзыв</h1>
+
+<form action="/reviews/edit" method="POST" class="review-form">
+{{!-- <div class="input-field">
+          <input id="title" name="title" type="text" class="validate" required value="{{review.title}}">
+          <label for="title">Имя</label>
+          <span class="helper-text" data-error="Введите Имя" ></span>
+        </div> --}}
+
+<div class="input-field">
+          <input id="otzyv" name="otzyv" type="text" class="validate" required value="{{review.otzyv}}">
+          <label for="otzyv">Текст</label>
+          <span class="helper-text" data-error="Введите текст" ></span>
+        </div>
+
+{{!-- <div class="input-field">
+          <input id="date" name="date" type="date" class="validate"  required value="{{review.date}}">
+          <label for="date">Дата</label>
+          <span class="helper-text" data-error="Введите дату" ></span>
+        </div>  --}}
+
+    <input type="hidden" name="id" value="{{review.id}}">
+<input type="hidden" name="_csrf" value="{{csrf}}">
+<button type="submit" class="btn btn-primary">Редактировать отзыв</button>
+</form>
+
+<form action="/reviews/remove" method="POST">
+<input type="hidden" name="id" value="{{review.id}}">
+<input type="hidden" name="_csrf" value="{{csrf}}">
+
+  <button class="btn red" >Удалить отзыв</button>
+</form>

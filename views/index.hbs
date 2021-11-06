@@ -1,0 +1,71 @@
+<form method="POST" action="/saveresult">
+<div id="countcol" >
+	<p><b>Имя дерева решений:</b>
+		<input id="treename" name="treename" type="text" size="30" required>
+	</p>
+	<p><b>Количество артибутов:</b>
+		<input id="cols" name="cols" type="text" size="30">
+		
+		<input type='button' id="0" value='Применить' onClick="createvaluetab()">
+	</p>
+	<hr>
+  </div>
+  <div id="valuetable" >
+	<p><b>Заголовки атрибутов:</b>
+
+	<table data-name="tabvalue" id="tabvalue" border="1" cellspacing="0" cellpadding="5">
+    </table>
+	<input type="hidden" id="inputtabvalue" name="inputtabvalue">
+
+	<p><b>Количество строк:</b>
+		<input id="rows" name="rows" type="text" size="30">
+		
+		<input type='button' id="1" value='Применить' onClick="createvaluetab1()">
+	
+	</p>
+	<hr>
+  </div>
+  <div id="supertable" >
+	<p><b>Обучаемая таблица:</b>
+	
+	<table data-name="tabvalue1" id="tabvalue1"  border="1" cellspacing="0" cellpadding="5">
+    </table>
+	<input type="hidden" id="inputtabvalue1" name="inputtabvalue1">
+	
+	<p><b>Атрибут классификации:</b>
+	<input id="catAttr" name="key" type="text" size="30">
+	
+	<p><b>Игнорируемый атрибут:</b>
+	<input id="ignAttr" name="ign_key" type="text" size="30">
+	
+	<input type='button' id="2" value='Применить' onClick="createvaluetab2()">
+	
+	<p><b>Классифицируемые атрибуты:</b>
+	<table data-name="tabvalue2" id="tabvalue2" border="1" cellspacing="0" cellpadding="5">
+    </table>
+	<input type="hidden" id="inputtabvalue2" name="inputtabvalue2">
+	
+	<input type='button' id="3" value='Применить' onClick="createvar()">
+	<hr>
+  </div>
+{{#if isAuth}}
+<button class="btn btn-priamary">Сохранить результат</button>
+<button class="btn btn-priamary" onclick="pdf()">Создать снимок экрана</button>
+ {{/if}}
+ <br/>
+ <b>Введенные Атрибуты:</b>
+<div id="testingItem"></div>
+<br/>
+<b>Прогноз дерева решений:</b>
+<div id="decisionTreePrediction"></div>
+<br/>
+<b>Случайный прогноз дерева решений:</b>
+<div id="randomForestPrediction"></div>
+<br/>
+<b>Дерево решений:</b>
+<br/>
+
+<div class="tree" id="displayTree"></div>
+<input type="hidden" name="_csrf" value="{{csrf}}">
+ </form>
+ 
