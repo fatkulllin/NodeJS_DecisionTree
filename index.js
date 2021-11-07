@@ -43,7 +43,7 @@ const varMiddleware = require('./middleware/variables')
 const userMiddleware = require('./middleware/user')
 
 /*Ссылка на покдлючение mongoDb */
-const MONGODB_URI = `mongodb+srv://sliva:aLGTQ6H48rGFUl7j@cluster0-96ggy.mongodb.net/review` 
+//const MONGODB_URI = `` 
 
 /* ВСЕ ЧТО НУЖНО, ЧТОБЫ РАБоТАТЬ С handlebars */
 //создадим объект, где будем конфигурировать hbs
